@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FG-204 Divergence Meter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- CRT Scanline effect overlay -->
+    <div class="scanlines"></div>
+
+    <div class="container">
+        <!-- Initial Boot Screen -->
+        <div id="init-screen">
+            <h1>=== FUTURE GADGET LAB: FG-204 ===</h1>
+            <p>Awaiting Observer Input...</p>
+            <button id="boot-btn">[ INIT HARDWARE BRIDGE ]</button>
+        </div>
+
+        <!-- Terminal Boot Text -->
+        <div id="boot-sequence" class="hidden"></div>
+
+        <!-- Main Dashboard -->
+        <div id="dashboard" class="hidden">
+            <div class="header">
+                <h2>=== FUTURE GADGET LAB: FG-204 ===</h2>
+                <div class="subtitle">divergence meter // rev.7</div>
+            </div>
+
+            <!-- Nixie Display -->
+            <div class="nixie-wrapper">
+                <div class="nixie-header">DIVERGENCE READING</div>
+                <div id="nixie-display" class="nixie-display">
+                    <!-- Digits injected via JS -->
+                </div>
+                <div id="status-text" class="status-text"></div>
+            </div>
+
+            <!-- Overall Progress -->
+            <div class="overall-progress">
+                <span>Progress: [</span>
+                <div class="progress-track"><div id="overall-bar" class="progress-fill"></div></div>
+                <span>] <span id="overall-pct">0.0</span>%</span>
+            </div>
+
+            <div class="divider">--------------------------------------</div>
+            
+            <div class="field-info">
+                <div><span class="muted">&gt;&gt;</span> FIELD    : <span id="field-name"></span></div>
+                <div><span class="muted">&gt;&gt;</span> DEADLINE : <span id="deadline-text"></span></div>
+            </div>
+
+            <div class="divider">--------------------------------------</div>
+            <div class="section-title">METRIC BREAKDOWN <span class="muted">(burn/day)</span></div>
+
+            <!-- Metrics List -->
+            <div id="metrics-list">
+                <!-- Metrics injected via JS -->
+            </div>
+
+            <div class="divider">--------------------------------------</div>
+            
+            <div class="controls">
+                <button id="update-btn">[U] Update</button>
+                <button id="log-btn">[L] View Log</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="modal-overlay" class="hidden">
+        <div id="modal-content" class="modal">
+            <!-- Modal content injected via JS -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
